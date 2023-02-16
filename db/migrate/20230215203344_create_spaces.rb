@@ -6,6 +6,7 @@ class CreateSpaces < ActiveRecord::Migration[7.0]
       t.string :contact
       t.string :description
       t.integer :price
+      t.references :user
 
       t.timestamps
     end
