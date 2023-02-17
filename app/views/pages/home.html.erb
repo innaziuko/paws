@@ -1,2 +1,36 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
+  <div class="banner">
+    <div class="banner-content">
+      <h1>COWORKING SPACES</h1>
+      <h5>Work independently, not alone!</h5>
+    </div>
+
+    <br>
+
+    <div class="banner-content">
+    <%= image_tag "home_banner.jpeg", alt: "Le Wagon", width: "100%" %>
+    </div>
+
+    <br>
+
+    <div class="banner-content">
+    <p>Our coworking spaces allow for flexible commitments to locations convenient for you and your team. Book a temporary office at a short notice and without a hassle.</p>
+    </div>
+
+    <div class="search-bar">
+      <form action="/spaces" class="form-inline padded">
+        <select name="" id="" class="form-control border-radius input-lg">
+          <option value="1">Paris</option>
+          <option value="2">London</option>
+          <option value="3">Berlin</option>
+          <option value="3">Barcelona</option>
+        </select>
+        <input type="text" name="checkin" class="form-control border-radius input-lg datepicker" placeholder="Checkin">
+        <input type="text" name="checkout" class="form-control border-radius input-lg datepicker" placeholder="Checkout">
+        <br>
+        <input type="submit" class="btn btn-outline-primary btn-lg" value="Search">
+      </form>
+    </div>
+  </div>
+
+</div>
