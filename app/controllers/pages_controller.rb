@@ -3,5 +3,4 @@ class PagesController < ApplicationController
     @space = Space.new
     @space = Space.all
   end
-
 end
