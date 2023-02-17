@@ -28,7 +28,6 @@ Space.create!(
   user_id: user_1.id
 )
 
-
 Space.create!(
   name: Faker::Company.name,
   address: Faker::Address.street_address,
