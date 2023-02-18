@@ -1,4 +1,8 @@
 class SpacesController < ApplicationController
+  def index
+    @spaces = Space.all
+  end
+
   before_action :set_space, only:[:edit, :update]
 
   def edit
@@ -21,5 +25,4 @@ class SpacesController < ApplicationController
   def set_space
     @space = Space.find(params[:id])
   end
-
 end
