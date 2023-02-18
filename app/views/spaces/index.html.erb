@@ -7,7 +7,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="/" role="button">Home</a>
           <a class="nav-link" href="#">Location</a>
           <a class="nav-link" href="#">Rent your space</a>
           <a class="nav-link disabled">Disabled</a>
@@ -25,7 +25,7 @@
         <h5 class="card-title"><%= space.name %></h5>
         <p class="card-text mb-0"><%= space.address %></p>
         <p class="card-text mt-0"><%= "€#{space.price}/h" %></p>
-        <a href="#" class="btn btn-primary">Discover more</a>
+        <a href=<%= "/spaces/#{space.id}" %> class="btn btn-primary" role="button">Discover more</a>
       </div>
     </div>
   </div>
