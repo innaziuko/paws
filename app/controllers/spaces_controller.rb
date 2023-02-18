@@ -4,6 +4,10 @@ class SpacesController < ApplicationController
   def edit
   end
 
+  def show
+    @space = Space.find(params[:id])
+  end
+
   def update
     if @space.update(space_params)
       redirect_to space_path(@space)
@@ -21,5 +25,4 @@ class SpacesController < ApplicationController
   def set_space
     @space = Space.find(params[:id])
   end
-
 end
