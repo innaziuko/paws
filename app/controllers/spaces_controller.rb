@@ -3,13 +3,16 @@ class SpacesController < ApplicationController
     @spaces = Space.all
   end
 
-  before_action :set_space, only:[:edit, :update]
+  before_action :set_space, only: %I[edit update show destroy]
 
-  def edit
+  def new
+    @space = Space.new
   end
 
-  def show
-    @space = Space.find(params[:id])
+  def create
+    space = Space.new(space_params)
+    space.save
+    redirect_to spaces_path
   end
 
   def update

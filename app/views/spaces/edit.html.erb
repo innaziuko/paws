@@ -1,28 +1,6 @@
-<%= simple_form_for(@space) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
-  <div class="form-inputs">
-    <%= f.input :name %>
-  </div>
-
-  <div class="form-inputs">
-    <%= f.input :contact %>
-  </div>
-
-    <div class="form-inputs">
-    <%= f.input :description %>
-  </div>
-
-    <div class="form-inputs">
-    <%= f.input :address %>
-  </div>
-
-    <div class="form-inputs">
-    <%= f.input :price %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+<div class="container">
+<h1>Update your Space</h1>
+<br>
+<br>
+  <%= render "form", restaurant: @space %>
+</div>
