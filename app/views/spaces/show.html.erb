@@ -16,5 +16,9 @@
   </div>
 
 <div class="btn btn-outline-primary btn-lg"> <%= link_to 'Go back to all the spaces', spaces_path %></div>
-
+<% if Booking.find_by(space: @space, user: current_user).present? %>
+<div class="btn btn-outline-primary btn-lg"> <%= button_to 'Cancel Booking',  space_booking_path(@space.id), method: :delete %></div>
+<% else %>
+<div class="btn btn-outline-primary btn-lg"> <%= button_to 'Booking',  space_bookings_path(@space.id), method: :post %></div>
+<% end %>
 </div>
