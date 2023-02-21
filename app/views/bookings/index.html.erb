@@ -28,7 +28,7 @@
               Rent your space
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <li><a class="dropdown-item" href="#">Create my space</a></li>
+              <li><a class="dropdown-item" href="#">Create my sapce</a></li>
               <li><a class="dropdown-item" href="#">Edit my space</a></li>
               <li><a class="dropdown-item" href="#">Manage my bookings</a></li>
             </ul>
@@ -38,18 +38,15 @@
     </div>
   </nav>
 
-  <div class="row row-cols-1 row-cols-md-3 g-4">
-  <% @spaces.each do |space| %>
-  <div class="col">
-    <div class="card">
-      <%= image_tag "space.jpg", alt: "" %>
-      <div class="card-body">
-        <h5 class="card-title"><%= space.name %></h5>
-        <p class="card-text mb-0"><%= space.address %></p>
-        <p class="card-text mt-0"><%= "€#{space.price}/h" %></p>
-        <a href=<%= "/spaces/#{space.id}" %> class="btn btn-primary" role="button">Discover more</a>
-      </div>
-    </div>
-  </div>
-  <% end %>
+  <div class="list-group">
+    <% @space.bookings.each do |booking| %>
+      <a href="#" class="list-group-item list-group-item-action">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1"><%= @space.name %></h5>
+          <small class="text-muted">3 days ago</small>
+        </div>
+        <p class="mb-1"><strong>Start:</strong> <%= booking.start_date %> <strong>End:</strong> <%= booking.end_date %></p>
+        <small class="text-muted"><strong>Total price:</strong> €<%= booking.total_price %></small>
+      </a>
+    <% end %>
 </div>
