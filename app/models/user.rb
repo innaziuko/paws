@@ -8,4 +8,5 @@ class User < ApplicationRecord
   # validates :first_name, presence: true
 
   has_many :bookings
+  has_many :spaces, dependent: :destroy
 end

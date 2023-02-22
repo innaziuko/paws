@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   root to: "pages#home"
   resources :spaces
   resources :spaces do
-    resources :bookings, only: [:create, :destroy]
+    resources :bookings, only: %i[create destroy]
   end
+  resources :bookings, only: [:index]
   # Defines the root path route ("/")
   # root "articles#index"
 end

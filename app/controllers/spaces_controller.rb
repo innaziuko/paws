@@ -1,9 +1,10 @@
 class SpacesController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[index show]
+  before_action :set_space, only: %I[edit update show destroy]
+
   def index
     @spaces = Space.all
   end
-
-  before_action :set_space, only: %I[edit update show destroy]
 
   def new
     @space = Space.new

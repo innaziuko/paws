@@ -1,4 +1,7 @@
 class BookingsController < ApplicationController
+  def index
+    @bookings = Booking.where(user_id: current_user.id)
+  end
 
   def create
     space = Space.find_by(id: params[:space_id])
