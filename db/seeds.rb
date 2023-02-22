@@ -22,6 +22,16 @@ user2 = User.create(
   password: "123456"
 )
 
+user3 = User.create(
+  email: Faker::Internet.email,
+  password: "123456"
+)
+
+user4 = User.create(
+  email: Faker::Internet.email,
+  password: "123456"
+)
+
 puts "users created."
 
 space1 = Space.create!(
@@ -57,7 +67,7 @@ Booking.create!(
   end_date: "20230219",
   total_price: Faker::Number.non_zero_digit,
   space_id: space1.id,
-  user_id: user1.id
+  user_id: user3.id
 )
 
 Booking.create!(
@@ -65,7 +75,7 @@ Booking.create!(
   end_date: "20230202",
   total_price: Faker::Number.non_zero_digit,
   space_id: space2.id,
-  user_id: user2.id
+  user_id: user4.id
 )
 
 puts "Bookings created"
