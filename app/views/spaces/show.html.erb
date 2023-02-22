@@ -9,16 +9,22 @@
  <br>
 
   <div class="banner-content">
-    <p>Adress: <%= @space.address %></p>
-    <p>Contact Information: <%= @space.contact %></p>
-    <p>Description: <%= @space.description %></p>
-    <p>Price: <%= @space.price %> $</p>
+    <p><strong>Adress:</strong> <%= @space.address %></p>
+    <p><strong>Contact Information:</strong> <%= @space.contact %></p>
+    <p><strong>Description:</strong> <%= @space.description %></p>
+    <p><strong>Price:</strong> <%= @space.price %> $</p>
   </div>
 
-<div class="btn btn-outline-primary btn-lg"> <%= link_to 'Go back to all the spaces', spaces_path %></div>
-<% if Booking.find_by(space: @space, user: current_user).present? %>
-<div class="btn btn-outline-primary btn-lg"> <%= button_to 'Cancel Booking',  space_booking_path(@space.id), method: :delete %></div>
-<% else %>
-<div class="btn btn-outline-primary btn-lg"> <%= button_to 'Booking',  space_bookings_path(@space.id), method: :post %></div>
-<% end %>
+  <div class="d-flex justify-content-end">
+    <div>
+      <a href="/spaces" class="btn btn-outline-primary btn-lg mb-2 mt-0" role="button">Go back to all spaces</a>
+    </div>
+    <div>
+      <% if Booking.find_by(space: @space, user: current_user).present? %>
+        <div> <%= button_to 'Cancel Booking',  space_booking_path(@space.id), method: :delete, class: "btn btn-outline-primary btn-lg" %></div>
+      <% else %>
+        <div> <%= button_to 'Booking',  space_bookings_path(@space.id), method: :post, class: "btn btn-outline-primary btn-lg" %></div>
+      <% end %>
+    </div>
+  </div>
 </div>
