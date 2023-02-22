@@ -1,6 +1,12 @@
 class BookingsController < ApplicationController
   def index
-    @bookings = Booking.where(user_id: current_user.id)
+    # @bookings = Booking.where(user_id: current_user.id)
+    traget_space = Space.where(user: current_user)
+    if traget_space.present?
+      @bookings = Booking.where(space: traget_space)
+    else
+      @bookings = Booking.where(user: current_user)
+    end
   end
 
   def create
