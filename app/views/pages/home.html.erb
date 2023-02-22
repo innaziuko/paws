@@ -1,4 +1,7 @@
 <div class="container">
+<% if user_signed_in? %>
+<p><%= "hello #{current_user.email}" %></p>
+<% end  %>
   <div class="banner">
     <div class="banner-content">
       <h1>COWORKING SPACES</h1>
@@ -8,7 +11,7 @@
     <br>
 
     <div class="banner-content">
-    <%= image_tag "home_banner.jpeg", alt: "Le Wagon", width: "100%" %>
+    <%= image_tag "home_banner.jpg", alt: "Le Wagon", width: "100%" %>
     </div>
 
     <br>
@@ -25,12 +28,18 @@
           <option value="3">Berlin</option>
           <option value="3">Barcelona</option>
         </select>
-        <input type="text" name="checkin" class="form-control border-radius input-lg datepicker" placeholder="Checkin">
-        <input type="text" name="checkout" class="form-control border-radius input-lg datepicker" placeholder="Checkout">
+        <input type="date" name="checkin" class="form-control border-radius input-lg datepicker" placeholder="Checkin">
+        <input type="date" name="checkout" class="form-control border-radius input-lg datepicker" placeholder="Checkout">
         <br>
         <input type="submit" class="btn btn-outline-primary btn-lg" value="Search">
       </form>
     </div>
   </div>
+
+ <% if user_signed_in? %>
+ <%= button_to "Logout",  destroy_user_session_path, method: :delete %>
+ <% else %>
+<%= button_to "Login",  new_user_session_path, method: :get %>
+ <% end %>
 
 </div>

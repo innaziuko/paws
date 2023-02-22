@@ -9,6 +9,9 @@
         <p class="card-text mb-0"><%= space.address %></p>
         <p class="card-text mt-0"><%= "€#{space.price}/h" %></p>
         <a href=<%= "/spaces/#{space.id}" %> class="btn btn-primary" role="button">Discover more</a>
+        <% if Booking.find_by(space: space, user: current_user).present? %>
+        <button class="btn btn-primary"> Booked </button>
+        <% end %>
       </div>
     </div>
   </div>
