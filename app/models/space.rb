@@ -1,6 +1,7 @@
 class Space < ApplicationRecord
   has_many :bookings, dependent: :destroy
   belongs_to :user
+  has_one_attached :photo
   # has_many :users, through: :bookings
 
   validates :name, presence: true, uniqueness: true
