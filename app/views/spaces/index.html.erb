@@ -5,7 +5,7 @@
     <div class="card">
       <%= image_tag "space.jpg", alt: "" %>
       <div class="card-body">
-        <h5 class="card-title"><%= space.name %></h5>
+        <h5 class="card-title" style="color: #6096B4";><%= space.name %></h5>
         <p class="card-text mb-0"><%= space.address %></p>
         <p class="card-text mt-0"><%= "€#{space.price}/h" %></p>
         <a href=<%= "/spaces/#{space.id}" %> class="btn btn-outline-primary" role="button">Discover more</a>
