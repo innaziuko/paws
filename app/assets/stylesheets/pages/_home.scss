@@ -1,1 +1,53 @@
 // Specific CSS for your home-page
+
+.img{
+  width: 200px;
+  height: 500px;
+}
+
+.text {
+  padding-right:40px;
+  margin-bottom: 15px;
+}
+
+.info-container{
+  display:flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.info-container-text{
+  display:flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-left:250px;
+  margin-right:250px;
+}
+
+.form-container{
+  display:flex;
+  justify-content: flex-start;
+}
+
+.card{
+  margin: 25px;
+}
+
+p{
+  font-size: 15px;
+}
+
+h1{
+  margin-bottom:0;
+  color: #6096B4;
+}
+
+.icon-container {
+  display: flex;
+  align-items: center;
+}
+
+i {
+  font-size: 24px;
+  margin-right: 8px;
+}

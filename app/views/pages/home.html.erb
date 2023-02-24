@@ -1,38 +1,132 @@
 <div class="container">
-  <% if user_signed_in? %>
-  <p><%= "hello #{current_user.email}" %></p>
-  <% end  %>
-    <div class="banner">
-      <div class="banner-content">
-        <h1>COWORKING SPACES</h1>
-        <h5>Work independently, not alone!</h5>
-      </div>
+  <%= image_tag "space_home.jpg", alt: "", height: "620px" %>
 
+  <br>
+  <br>
+  <br>
+
+  <div class="info-container">
+    <h2>Our Offices designed for work</h2>
+  </div>
+
+  <div class="info-container-text">
+    <p>We love the elegant offices overlooking the Elbe in Hamburg, and the sunny offices with their own terraces in Berlin – there’s something for everyone, and every team.</p>
+  </div>
+  <br>
+  <br>
+  <br>
+
+  <div class="info-container">
+    <div class="text col-12 col-lg-4">
+      <h1>COWORKER</h1>
+      <p>Work independently, not alone!<p>
       <br>
-
-      <div class="banner-content">
-      <%= image_tag "home_banner.jpg", alt: "Le Wagon", width: "100%" %>
-      </div>
-
       <br>
-
-      <div class="banner-content">
-      <p>Our coworking spaces allow for flexible commitments to locations convenient for you and your team. Book a temporary office at a short notice and without a hassle.</p>
+      <br>
+      <h6>MEMBERSHIP DETAILS</h6>
+      <div class="icon-container">
+        <i class="fa-solid fa-check"></i>
+        <span class="text">Work from hot desks, lounges, phone booths and more</span>
       </div>
 
-      <div class="search-bar">
-        <form action="/spaces" class="form-inline padded">
-          <select name="" id="" class="form-control border-radius input-lg">
-            <option value="1">Paris</option>
-            <option value="2">London</option>
-            <option value="3">Berlin</option>
-            <option value="3">Barcelona</option>
-          </select>
-          <input type="date" name="checkin" class="form-control border-radius input-lg datepicker" placeholder="Checkin">
-          <input type="date" name="checkout" class="form-control border-radius input-lg datepicker" placeholder="Checkout">
-          <br>
-          <input type="submit" class="btn btn-outline-primary mb-2 mt-0" value="Search">
-        </form>
+       <div class="icon-container">
+        <i class="fa-solid fa-check"></i>
+        <span class="text">Book meeting rooms and private offices with credits</span>
+      </div>
+
+      <div class="icon-container">
+        <i class="fa-solid fa-check"></i>
+        <span class="text">Enjoy high-speed internet and unlimited coffee</span>
       </div>
     </div>
+
+    <div class="col-12 col-lg-8">
+      <%= image_tag "space2.jpg", alt: "Le Wagon", width: "100%" %>
+    </div>
+  </div>
+
+  <br>
+
+
+  <div class="info-container">
+    <div class="card">
+      <%= image_tag "home_banner.jpg", alt: "Le Wagon", width: "100%" %>
+      <div class="card-body">
+        <h5 class="card-title">Select your membership plan</h5>
+        <p class="card-text mb-0">Find the locations you want to work from and choose the membership plan that best fits your needs</p>
+      </div>
+    </div>
+    <div class="card">
+      <%= image_tag "home_banner.jpg", alt: "Le Wagon", width: "100%" %>
+      <div class="card-body">
+        <h5 class="card-title">Book ahead and get to work</h5>
+        <p class="card-text mb-0">Use the app to reserve your space ahead of time. Collect your keycard, swipe in and enjoy a productive day.</p>
+      </div>
+    </div>
+    <div class="card">
+      <%= image_tag "home_banner.jpg", alt: "Le Wagon", width: "100%" %>
+      <div class="card-body">
+        <h5 class="card-title">Find your new team office</h5>
+        <p class="card-text mb-0">Flexible team offices of all sizes are our specialty. Our offices are waiting to become your new workspace.</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <%= image_tag "home_banner.jpg", alt: "Le Wagon", width: "100%" %>
+      </div>
+      <div class="carousel-item">
+        <%= image_tag "space.jpg", alt: "Le Wagon",  width: "100%" %>
+      </div>
+      <div class="carousel-item">
+        <%= image_tag "home_banner.jpg", alt: "Le Wagon",  width: "100%" %>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+
+
+  <br>
+
+
+
+  <div class="form-container">
+    <div class="search-bar">
+      <form action="/spaces" class="form-inline padded">
+        <select name="" id="" class="form-control border-radius input-lg">
+          <option value="1">Paris</option>
+          <option value="2">London</option>
+          <option value="3">Berlin</option>
+          <option value="3">Barcelona</option>
+        </select>
+        <input type="date" name="checkin" class="form-control border-radius input-lg datepicker" placeholder="Checkin">
+        <input type="date" name="checkout" class="form-control border-radius input-lg datepicker" placeholder="Checkout">
+        <br>
+        <input type="submit" class="btn btn-outline-primary mb-2 mt-0" value="Search">
+      </form>
+    </div>
+
+    <div class="banner-content">
+    <p>Our coworking spaces allow for flexible commitments to locations convenient for you and your team. Book a temporary office at a short notice and without a hassle.</p>
+    </div>
+  </div>
+
+
+
+  <% if user_signed_in? %>
+    <p><%= "hello #{current_user.email}" %></p>
+  <% end  %>
+
+
 </div>
