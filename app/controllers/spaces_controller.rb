@@ -6,6 +6,10 @@ class SpacesController < ApplicationController
     @spaces = Space.all
   end
 
+  def all
+    @spaces = Space.where(user: current_user)
+  end
+
   def new
     @space = Space.new
   end

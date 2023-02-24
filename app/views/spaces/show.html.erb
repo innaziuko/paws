@@ -21,9 +21,9 @@
     </div>
     <div>
       <% if Booking.find_by(space: @space, user: current_user).present? %>
-        <div> <%= button_to 'Cancel Booking',  space_booking_path(@space.id), method: :delete, class: "btn btn-outline-primary btn-lg" %></div>
+        <div> <%= button_to 'Cancel Booking', space_booking_path(@space.id), method: :delete, class: "btn btn-outline-primary btn-lg" %></div>
       <% else %>
-        <div> <%= button_to 'Booking',  space_bookings_path(@space.id), method: :post, class: "btn btn-outline-primary btn-lg" %></div>
+        <div> <%= button_to 'Booking', space_bookings_path(@space.id), method: :post, class: "btn btn-outline-primary btn-lg" %></div>
       <% end %>
     </div>
   </div>

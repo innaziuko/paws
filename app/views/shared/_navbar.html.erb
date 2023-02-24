@@ -27,8 +27,8 @@
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <li><a class="dropdown-item" href="/spaces/new" role="button">Create my space</a></li>
               <% if Space.find_by(user: current_user).present? %>
-                <% edit_href = "/spaces/#{Space.find_by(user: current_user).id}/edit" %>
-                <li><a class="dropdown-item" href=<%= edit_href %>>Edit my space</a></li>
+                <%# <% edit_href = "/spaces/#{Space.find_by(user: current_user).id}/edit" %>
+                <li><a class="dropdown-item" href="/spaces/all">Edit my space</a></li>
               <% else %>
                 <li><a class="dropdown-item" href="#">Edit my space</a></li>
               <% end %>
