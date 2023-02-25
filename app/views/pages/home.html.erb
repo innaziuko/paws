@@ -1,20 +1,19 @@
 <div class="container">
-  <%= image_tag "space_home.jpg", alt: "", height: "620px" %>
+  <%#= image_tag "space_home.jpg", alt: "", height: "620px" %>
 
-  <br>
-  <br>
-  <br>
-
-  <div class="info-container">
-    <h2>Our Offices designed for work</h2>
+  <div class="home_banner">
+    <div class="banner-text">
+      <div>
+        <p class="text-size">FIND YOUR PERFECT</p>
+        <p class="text-size">WORKSPACE</p>
+      </div>
+    </div>
   </div>
 
-  <div class="info-container-text">
-    <p>We love the elegant offices overlooking the Elbe in Hamburg, and the sunny offices with their own terraces in Berlin – there’s something for everyone, and every team.</p>
-  </div>
   <br>
   <br>
   <br>
+
 
   <div class="info-container">
     <div class="text col-12 col-lg-4">
@@ -41,32 +40,51 @@
     </div>
 
     <div class="col-12 col-lg-8">
-      <%= image_tag "space2.jpg", alt: "Le Wagon", width: "100%" %>
+      <%= image_tag "space2.jpg", alt: "", width: "100%" %>
     </div>
   </div>
-
+  <br>
+  <br>
   <br>
 
 
   <div class="info-container">
+    <%= image_tag "vector_2.png", alt: "", height: "400px" %>
+  </div>
+
+
+  <div class="info-container">
+    <h2><strong>Our Offices Designed for Work</strong></h2>
+  </div>
+
+  <div class="info-container-text">
+    <p>We love the elegant offices overlooking the Elbe in Hamburg, and the sunny offices with their own terraces in Berlin – there’s something for everyone, and every team.</p>
+  </div>
+  <br>
+
+
+
+
+
+  <div class="info-container">
     <div class="card">
-      <%= image_tag "home_banner.jpg", alt: "Le Wagon", width: "100%" %>
+      <%= image_tag "space13.jpg", alt: "", width: "300px" %>
       <div class="card-body">
-        <h5 class="card-title">Select your membership plan</h5>
+        <h5 class="card-title"><strong>Select your membership plan</strong></h5>
         <p class="card-text mb-0">Find the locations you want to work from and choose the membership plan that best fits your needs</p>
       </div>
     </div>
     <div class="card">
-      <%= image_tag "home_banner.jpg", alt: "Le Wagon", width: "100%" %>
+      <%= image_tag "space12.jpg", alt: "", width: "300px" %>
       <div class="card-body">
-        <h5 class="card-title">Book ahead and get to work</h5>
+        <h5 class="card-title"><strong>Book ahead and get to work</strong></h5>
         <p class="card-text mb-0">Use the app to reserve your space ahead of time. Collect your keycard, swipe in and enjoy a productive day.</p>
       </div>
     </div>
     <div class="card">
-      <%= image_tag "home_banner.jpg", alt: "Le Wagon", width: "100%" %>
+      <%= image_tag "space10.jpg", alt: "", width: "300px" %>
       <div class="card-body">
-        <h5 class="card-title">Find your new team office</h5>
+        <h5 class="card-title"><strong>Find your new team office</strong></h5>
         <p class="card-text mb-0">Flexible team offices of all sizes are our specialty. Our offices are waiting to become your new workspace.</p>
       </div>
     </div>
@@ -75,15 +93,22 @@
 
   <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
-      <div class="carousel-item active">
-        <%= image_tag "home_banner.jpg", alt: "Le Wagon", width: "100%" %>
+      <div class="carousel-item active carousel">
+        <%= image_tag "space7.jpg", alt: "Le Wagon", width: "100%" %>
       </div>
-      <div class="carousel-item">
-        <%= image_tag "space.jpg", alt: "Le Wagon",  width: "100%" %>
+      <div class="carousel-item carousel">
+        <%= image_tag "space3.jpg", alt: "Le Wagon",  width: "100%" %>
       </div>
-      <div class="carousel-item">
-        <%= image_tag "home_banner.jpg", alt: "Le Wagon",  width: "100%" %>
+      <div class="carousel-item carousel">
+        <%= image_tag "space5.jpg", alt: "Le Wagon",  width: "100%" %>
       </div>
+      <div class="carousel-item carousel">
+        <%= image_tag "space6.jpg", alt: "Le Wagon",  width: "100%" %>
+      </div>
+      <div class="carousel-item carousel">
+        <%= image_tag "space4.jpg", alt: "Le Wagon",  width: "100%" %>
+      </div>
+
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -97,6 +122,8 @@
 
 
 
+  <br>
+  <br>
   <br>
 
 
@@ -118,15 +145,32 @@
     </div>
 
     <div class="banner-content">
-    <p>Our coworking spaces allow for flexible commitments to locations convenient for you and your team. Book a temporary office at a short notice and without a hassle.</p>
+      <p><strong>Our coworking spaces allow for flexible commitments to locations convenient for you and your team. Book a temporary office at a short notice and without a hassle.</strong></p>
     </div>
+
   </div>
 
 
 
   <% if user_signed_in? %>
-    <p><%= "hello #{current_user.email}" %></p>
+    <p><% "hello #{current_user.email}" %></p>
   <% end  %>
 
 
+
 </div>
+
+<div class="footer-color">
+    <div class="footer container">
+      <div class="footer-links">
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+      </div>
+      <div class="footer-copyright">
+       Contact support@coworker.de
+      </div>
+    </div>
+  </div>
