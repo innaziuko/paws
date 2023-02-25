@@ -5,8 +5,7 @@ class SpacesController < ApplicationController
   def index
     checkin = params[:checkin]
     checkout = params[:checkout]
-    #@spaces = Space.where("start_date <= ? AND end_date >= ?", checkin, checkout)
-    @spaces = Space.left_joins(:bookings).where("spaces.start_date <= ? AND spaces.end_date >= ?", checkin, checkout)
+    @spaces = Space.where("start_date >= ? AND end_date >= ?", checkin, checkout)
   end
 
   def all
