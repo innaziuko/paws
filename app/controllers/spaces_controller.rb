@@ -3,7 +3,10 @@ class SpacesController < ApplicationController
   before_action :set_space, only: %I[edit update show destroy]
 
   def index
-    @spaces = Space.all
+    checkin = params[:checkin]
+    checkout = params[:checkout]
+    #@spaces = Space.where("start_date <= ? AND end_date >= ?", checkin, checkout)
+    @spaces = Space.left_joins(:bookings).where("spaces.start_date <= ? AND spaces.end_date >= ?", checkin, checkout)
   end
 
   def all
