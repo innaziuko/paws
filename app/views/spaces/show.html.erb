@@ -3,7 +3,7 @@
   <h1><%= @space.name%> </h1>
 
     <div class="banner-content">
-      <%= image_tag "home_banner.jpg", alt: "Le Wagon", width: "50%" %>
+      <%= cl_image_tag @space.photo.key, height: 300, width: 400, crop: :fill %>
     </div>
 
  <br>

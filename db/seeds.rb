@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+require "open-uri"
 puts "Cleaning the database"
 Booking.delete_all
 Space.delete_all
@@ -54,7 +55,8 @@ user8 = User.create(
 
 puts "users created."
 
-space1 = Space.create!(
+file = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg")
+space1 = Space.new(
   name: Faker::Company.name,
   address: Faker::Address.street_address,
   contact: Faker::Internet.email,
@@ -62,7 +64,10 @@ space1 = Space.create!(
   price: Faker::Number.decimal(l_digits: 2),
   user_id: user1.id
 )
+space1.photo.attach(io: file, filename: "space1.png", content_type: "image/png")
+space1.save
 
+file = URI.open("https://upload.wikimedia.org/wikipedia/commons/e/e3/Oranges_-_whole-halved-segment.jpg")
 space2 = Space.create!(
   name: Faker::Company.name,
   address: Faker::Address.street_address,
@@ -71,6 +76,8 @@ space2 = Space.create!(
   price: Faker::Number.decimal(l_digits: 2),
   user_id: user2.id
 )
+space2.photo.attach(io: file, filename: "space2.png", content_type: "image/png")
+space2.save
 
 space3 = Space.create!(
   name: Faker::Company.name,
