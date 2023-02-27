@@ -55,7 +55,7 @@ user8 = User.create(
 
 puts "users created."
 
-file = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg")
+file = URI.open("https://res.cloudinary.com/dm3olvwrg/image/upload/v1677510815/development/abfh3d5b2tb2tvd9kxig0de0ghd1.jpg")
 space1 = Space.new(
   name: Faker::Company.name,
   address: Faker::Address.street_address,
@@ -67,7 +67,7 @@ space1 = Space.new(
 space1.photo.attach(io: file, filename: "space1.png", content_type: "image/png")
 space1.save
 
-file = URI.open("https://upload.wikimedia.org/wikipedia/commons/e/e3/Oranges_-_whole-halved-segment.jpg")
+file = URI.open("https://res.cloudinary.com/dm3olvwrg/image/upload/v1677523911/development/gd24rbbljo0tcchyn1mp1eie7n8m.webp")
 space2 = Space.create!(
   name: Faker::Company.name,
   address: Faker::Address.street_address,
@@ -79,6 +79,7 @@ space2 = Space.create!(
 space2.photo.attach(io: file, filename: "space2.png", content_type: "image/png")
 space2.save
 
+file = URI.open("https://res.cloudinary.com/dm3olvwrg/image/upload/v1677496033/development/3ubgv64v88occrzomd65j5wgwu52.jpg")
 space3 = Space.create!(
   name: Faker::Company.name,
   address: Faker::Address.street_address,
@@ -87,7 +88,10 @@ space3 = Space.create!(
   price: Faker::Number.decimal(l_digits: 2),
   user_id: user3.id
 )
+space3.photo.attach(io: file, filename: "space3.png", content_type: "image/png")
+space3.save
 
+file = URI.open("https://res.cloudinary.com/dm3olvwrg/image/upload/v1677524980/development/raiz7ek8ljsrzsys9qv27545qqum.jpg")
 space4 = Space.create!(
   name: Faker::Company.name,
   address: Faker::Address.street_address,
@@ -96,7 +100,10 @@ space4 = Space.create!(
   price: Faker::Number.decimal(l_digits: 2),
   user_id: user3.id
 )
+space4.photo.attach(io: file, filename: "space4.png", content_type: "image/png")
+space4.save
 
+file = URI.open("https://res.cloudinary.com/dm3olvwrg/image/upload/v1677490859/ls0hr12mskrbfpnbpict.jpg")
 space5 = Space.create!(
   name: Faker::Company.name,
   address: Faker::Address.street_address,
@@ -105,7 +112,10 @@ space5 = Space.create!(
   price: Faker::Number.decimal(l_digits: 2),
   user_id: user4.id
 )
+space5.photo.attach(io: file, filename: "space5.png", content_type: "image/png")
+space5.save
 
+file = URI.open("https://res.cloudinary.com/dm3olvwrg/image/upload/v1677075528/samples/landscapes/nature-mountains.jpg")
 space6 = Space.create!(
   name: Faker::Company.name,
   address: Faker::Address.street_address,
@@ -114,7 +124,10 @@ space6 = Space.create!(
   price: Faker::Number.decimal(l_digits: 2),
   user_id: user4.id
 )
+space6.photo.attach(io: file, filename: "space6.png", content_type: "image/png")
+space6.save
 
+file = URI.open("https://res.cloudinary.com/dm3olvwrg/image/upload/v1677075522/samples/landscapes/architecture-signs.jpg")
 space7 = Space.create!(
   name: Faker::Company.name,
   address: Faker::Address.street_address,
@@ -123,7 +136,10 @@ space7 = Space.create!(
   price: Faker::Number.decimal(l_digits: 2),
   user_id: user4.id
 )
+space7.photo.attach(io: file, filename: "space7.png", content_type: "image/png")
+space7.save
 
+file = URI.open("https://res.cloudinary.com/dm3olvwrg/image/upload/v1677075526/samples/imagecon-group.jpg")
 space8 = Space.create!(
   name: Faker::Company.name,
   address: Faker::Address.street_address,
@@ -132,7 +148,10 @@ space8 = Space.create!(
   price: Faker::Number.decimal(l_digits: 2),
   user_id: user2.id
 )
+space8.photo.attach(io: file, filename: "space8.png", content_type: "image/png")
+space8.save
 
+file = URI.open("https://res.cloudinary.com/dm3olvwrg/image/upload/v1677075525/samples/ecommerce/leather-bag-gray.jpg")
 space9 = Space.create!(
   name: Faker::Company.name,
   address: Faker::Address.street_address,
@@ -141,6 +160,8 @@ space9 = Space.create!(
   price: Faker::Number.decimal(l_digits: 2),
   user_id: user1.id
 )
+space9.photo.attach(io: file, filename: "space9.png", content_type: "image/png")
+space9.save
 
 puts "Spaces created."
 # 50.times do
