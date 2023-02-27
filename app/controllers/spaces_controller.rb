@@ -38,9 +38,13 @@ class SpacesController < ApplicationController
   end
 
   def create
-    space = Space.new(space_params)
-    space.save
-    redirect_to spaces_path
+    @space = Space.new(space_params)
+    @space.user = current_user
+    if @space.save
+      redirect_to space_path(@space)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def update
