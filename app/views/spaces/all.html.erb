@@ -7,7 +7,7 @@
       </div>
       <div class="btn-group" role="group" aria-label="Basic outlined example">
         <%= button_to 'Edit', edit_space_path(space.id), method: :get, class: "btn btn-outline-primary btn-sm" %>
-        <%= button_to 'Delete', space_path(space.id), method: :delete, class: "btn btn-outline-primary btn-sm" %>
+        <%= button_to 'Delete', remove_space_path(space.id), method: :delete, class: "btn btn-outline-primary btn-sm" %>
       </div>
       <%# <span class="badge bg-primary rounded-pill">14</span> %>
     </li>

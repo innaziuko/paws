@@ -21,14 +21,14 @@ class BookingsController < ApplicationController
   end
 
   def destroy
-    space = Space.find_by(id: params[:space_id])
-    booking = Booking.find_by(space: space, user: current_user)
+    target_space = Space.find_by(id: params[:space_id])
+    booking = Booking.find_by(space: target_space, user: current_user)
     if booking.destroy
       flash[:notice] = "Booking is canceled"
       redirect_to spaces_path
     else
       flash[:notice] = "Booking is not canceled"
-      redirect_to space_path(space)
+      redirect_to space_path(target_space)
     end
   end
 end

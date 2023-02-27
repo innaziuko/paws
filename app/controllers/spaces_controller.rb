@@ -28,6 +28,11 @@ class SpacesController < ApplicationController
     end
   end
 
+  def destroy
+    @space.destroy
+    redirect_to all_spaces_path, status: :see_other
+  end
+
   private
 
   def space_params
