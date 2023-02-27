@@ -1,9 +1,10 @@
 <div class="container">
   <div class="row row-cols-1 row-cols-md-3 g-4">
   <% @spaces.each do |space| %>
+  <% if space.photo.attached? %>
   <div class="col">
     <div class="card">
-      <%= image_tag "space.jpg", alt: "" %>
+      <%= cl_image_tag space.photo.key, height: 300, width: 400, crop: :fill %>
       <div class="card-body">
         <h5 class="card-title" style="color: #6096B4";><%= space.name %></h5>
         <p class="card-text mb-0"><%= space.address %></p>
@@ -18,5 +19,6 @@
       </div>
     </div>
   </div>
+  <% end %>
   <% end %>
 </div>
