@@ -8,6 +8,9 @@
         <h5 class="card-title" style="color: #6096B4";><%= space.name %></h5>
         <p class="card-text mb-0"><%= space.address %></p>
         <p class="card-text mt-0"><%= "€#{space.price}/h" %></p>
+        <p class="card-text mt-0"><%= "Availability" %></p>
+        <p class="card-text mt-0"><%= "#{space.start_date.to_date}" %></p>
+        <p class="card-text mt-0"><%= "#{space.end_date.to_date}" %></p>
         <a href=<%= "/spaces/#{space.id}" %> class="btn btn-outline-primary" role="button">Discover more</a>
         <% if Booking.find_by(space: space, user: current_user).present? %>
         <button class="btn btn-outline-primary"> Booked </button>
