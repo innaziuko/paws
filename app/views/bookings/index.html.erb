@@ -2,10 +2,11 @@
   <div class="list-group">
     <% @bookings.each do |booking| %>
       <% space = Space.find_by(id: booking.space_id) %>
-      <a href="#" class="list-group-item list-group-item-action">
+      <a href="<%= space_path(space) %>" class="list-group-item list-group-item-action">
         <div class="d-flex w-100 justify-content-between">
           <h5 class="mb-1" style="color: #6096B4";><%= space.name %></h5>
-          <%= button_to 'Delete', space_booking_path(space.id, booking.id), method: :delete, class: "btn btn-outline-primary btn-sm" %>
+          <%= button_to 'Cancel Booking', space_booking_path(space.id, booking.id), data: { "turbo-method": :delete }, class: "btn btn-outline-primary btn-sm" %>
+
         </div>
         <p class="mb-1"><strong>Start:</strong> <%= booking.start_date %> <strong>End:</strong> <%= booking.end_date %></p>
         <small class="text-muted"><strong>Total price:</strong> €<%= booking.total_price %></small>

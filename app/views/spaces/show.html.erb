@@ -13,18 +13,23 @@
     <p><strong>Contact Information:</strong> <%= @space.contact %></p>
     <p><strong>Description:</strong> <%= @space.description %></p>
     <p><strong>Price:</strong> <%= @space.price %> $</p>
+    <div>
+      <% if Booking.find_by(space: @space, user: current_user).present? %>
+        <div> <%= button_to 'Cancel Booking', space_booking_path(@space.id), method: :delete, class: "btn btn-outline-primary btn-lg" %></div>
+      <% else %>
+        <%= simple_form_for @space, :url => space_bookings_path(@space.id), method: :post do |f| %>
+          <%= f.input :start_date, as: :date, html5: true %>
+          <%= f.input :end_date, as: :date, html5: true %>
+          <%= f.submit "booking" %>
+        <% end %>
+        <div> <%= button_to 'Booking', space_bookings_path(@space.id), method: :post, class: "btn btn-outline-primary btn-lg" %></div>
+      <% end %>
+    </div>
   </div>
 
   <div class="d-flex justify-content-end">
     <div>
       <a href="/spaces" class="btn btn-outline-primary btn-lg mb-2 mt-0" role="button">Go back to all spaces</a>
-    </div>
-    <div>
-      <% if Booking.find_by(space: @space, user: current_user).present? %>
-        <div> <%= button_to 'Cancel Booking', space_booking_path(@space.id), method: :delete, class: "btn btn-outline-primary btn-lg" %></div>
-      <% else %>
-        <div> <%= button_to 'Booking', space_bookings_path(@space.id), method: :post, class: "btn btn-outline-primary btn-lg" %></div>
-      <% end %>
     </div>
   </div>
 </div>
