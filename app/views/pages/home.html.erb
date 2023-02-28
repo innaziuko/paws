@@ -9,7 +9,12 @@
       </div>
     </div>
   </div>
-
+  <% if current_user %>
+    <p>Hello <%= current_user.email %>!</p>
+    <p>Nice to see you 😁 </p>
+  <% else %>
+  <p>You are not signed in</p>
+  <% end %>
   <br>
   <br>
   <br>
