@@ -5,6 +5,7 @@
   height: 500px;
 }
 
+
 .text {
   padding-right:40px;
   margin-bottom: 15px;
@@ -16,8 +17,16 @@
 
 .info-container{
   display:flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
+  margin-bottom: 20px;
+}
+
+.text-center{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  color: #6096B4;
 }
 
 .info-container-text{
@@ -33,9 +42,13 @@
   justify-content: space-between;
 }
 
-.card{
-  margin: 25px;
-}
+// .card{
+//   width: 30%;
+// }
+
+// .home-card{
+// width: 30%;
+// }
 
 p{
   font-size: 15px;
@@ -148,7 +161,6 @@ i {
 }
 .footer-links a:hover {
   color: #6096B4;
-
 }
 .footer-copyright {
   color: #0c0c0c;
