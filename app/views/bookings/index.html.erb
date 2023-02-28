@@ -6,10 +6,10 @@
   <p>You are not signed in</p>
   <% end %>
 
-  <div class="list-group"
+  <div class="list-group">
     <% @bookings.each do |booking| %>
       <% space = Space.find_by(id: booking.space_id) %>
-      <a href="<%= space_path(space) %>" class="list-group-item list-group-item-action">
+      <a href=<%= "/spaces/#{space.id}" %> class="list-group-item list-group-item-action">
         <div class="d-flex w-100 justify-content-between">
           <h5 class="mb-1" style="color: #6096B4";><%= space.name %></h5>
         </div>
@@ -17,4 +17,5 @@
         <small class="text-muted"><strong>Total price:</strong> €<%= booking.total_price %></small>
       </a>
     <% end %>
+  </div>
 </div>
